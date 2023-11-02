@@ -78,7 +78,15 @@ header {
     display: flex;
     flex-direction: row;
     justify-content: center;
+}
 
+.log-in-button {
+    border: solid;
+    padding: 5px 20px;
+}
+
+.strike-logo {
+    font-size: 25px;
 }
 
 .menu-links h2 {
