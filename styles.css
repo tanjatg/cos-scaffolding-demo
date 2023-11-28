@@ -1,20 +1,90 @@
-cssres/* http://meyerweb.com/eric/tools/css/reset/
+cssres
+
+/* http://meyerweb.com/eric/tools/css/reset/
 v2.0 | 20110126
 License: none (public domain)
 */
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
     margin: 0;
     padding: 0;
     border: 0;
@@ -22,25 +92,44 @@ time, mark, audio, video {
     font: inherit;
     vertical-align: baseline;
 }
+
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
     display: block;
 }
+
 body {
     line-height: 1;
 }
-ol, ul {
+
+ol,
+ul {
     list-style: none;
 }
-blockquote, q {
+
+blockquote,
+q {
     quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
     content: '';
     content: none;
 }
+
 table {
     border-collapse: collapse;
     border-spacing: 0;
@@ -59,18 +148,18 @@ header {
     position: fixed;
     box-sizing: border-box;
     width: 100%;
-    height: 50px;
     background-color: white;
     margin: 0 auto;
-    padding: 17.5px;
+    font-family: Tahoma, sans-serif;
+    z-index: 9999;
 }
 
 .nav-bar {
     display: grid;
-    grid-template-rows: 1;
-    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-columns: 0.5fr 3fr 0.5fr;
     justify-items: center;
     font-size: 16px;
+    align-items: center;
 }
 
 .menu-links {
@@ -78,35 +167,420 @@ header {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    transition: all 0.2s ease-in-out 0s;
 }
 
 .log-in-button {
     border: solid;
-    padding: 5px 20px;
+    border-width: 1px;
+    border-color: lightgray;
+    border-radius: 3px;
+    padding: 15px 30px;
+    font-size: 20px;
+    white-space: nowrap;
+    margin-right: 50px;
+    transition: all 0.2s ease-in-out 0s;
+}
+
+.log-in-button:hover {
+    border-color: rgb(42, 253, 128);
 }
 
 .strike-logo {
-    font-size: 25px;
+    font-size: 45px;
+    position: relative;
+    margin-left: 50px;
 }
 
 .menu-links h2 {
-    padding: 5px 10px;
+    margin: 15px 30px;
+    cursor: pointer;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
 }
 
 .valuation-button {
-    background-color: greenyellow;
+    background-color: rgb(42, 253, 128);
     width: auto;
     height: auto;
+    border-radius: 3px;
+    margin: 0px;
+    padding: 15px 30px;
+    transition: all 0.2s ease-in-out 0s;
+}
+
+.valuation-button:hover {
+    background-color: rgb(0, 233, 122);
+}
+
+.menu-arrow:after {
+    content: '▼';
+
+}
+
+.menu-links h2:hover .menu-arrow:after {
+    content: '▲';
+}
+
+.burger-menu {
+    visibility: hidden;
+    display: flex;
+    position: absolute;
+    right: 80px;
+    font-size: 20px;
+
+}
+
+.burger-menu-icon span {
+    display: flex;
+    height: 0.2rem;
+    width: 2.95rem;
+    background: black;
+    border-radius: 10px;
+    margin: 2px;
+    position: absolute;
+    right: -50px;
+}
+
+.burger-menu-icon span:nth-of-type(2) {
+    bottom: 7px;
+}
+.burger-menu-icon span:nth-of-type(3) {
+    bottom: 0px;
+}
+
+@media only screen and (max-width: 1200px) {
+    .menu-links h2 {
+        visibility: hidden;
+    }
+
+    .log-in-button {
+        visibility: hidden;
+    }
+
+    .burger-menu {
+        visibility: visible;
+    }
+
+}
+
+/*Chat bubble*/
+.chat-icon {
+    color: white;
+    background-color: rgb(0, 233, 122);
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 5vh;
+    right: 2vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4.5rem;
+    z-index: 999;
 }
 
 /* Hero */
+.hero {
+    padding-top: 100px;
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    margin: 0 auto;
+    font-family: Tahoma, sans-serif;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 95%;
+    height: 85vh;
+}
+
+.hero-postcode-input {
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
+    border: solid;
+    border-width: 1px;
+    border-color: gray;
+    justify-content: space-between;
+    align-items: center;
+    height: 75px;
+    width: 90%;
+}
+
+.hero-postcode-input input {
+    width: 50%;
+    border: none;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.hero-button {
+    width: 50%;
+    height: 90%;
+    text-align: center;
+    font-size: 15px;
+    text-wrap: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-sell {
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 60px;
+
+}
+
+.hero-sell h1 {
+    font-size: 50px;
+    font-weight: bold;
+    margin-bottom: 1rem;
+
+}
+
+.hero-sell h1:nth-of-type(2) {
+    padding-bottom: 5px;
+    border-bottom: 4px solid rgb(42, 253, 128);
+}
+
+
+.hero-sell h3 {
+    font-size: 20px;
+    margin: 30px 0px;
+}
+
+.hero-image-div {
+    display: flex;
+    justify-content: center;
+    height: 120%;
+    width: 40%;
+    margin-left: 10px;
+}
+
+.hero-image-div img {
+    object-fit: cover;
+    width: 100%;
+    height: 85%;
+}
+
+@media only screen and (max-width: 1050px) {
+    .hero {
+        flex-direction: column;
+        align-items: flex-start;
+        height: auto;
+        padding-top: 150px;
+
+    }
+
+    .hero-image-div {
+        width: 100%;
+        height: 400px;
+        margin: 0px;
+    }
+
+    .hero-image-div img {
+        object-fit: cover;
+    }
+
+    .hero-sell h3 {
+        visibility: hidden;
+        height: 0px;
+        margin: 10px;
+    }
+    .hero-sell h1 {
+        font-size: 45px;
+    }
+}
+
+@media only screen and (max-width: 670px) {
+    .hero {
+        width: 100%;
+        align-items: flex-end;
+        padding-top: 200px;
+    }
+    .hero-sell {
+        width: 90%;
+        margin-right: 5%;
+        margin-bottom: 30px;
+    }
+
+    .hero-postcode-input {
+        flex-direction: column;
+        flex-wrap: nowrap;
+        width: 90%;
+        border: none;
+        position: relative;
+        bottom: -396px;
+    }
+
+    .hero-postcode-input input {
+        width: 90%;
+        padding: 10px 0;
+        margin-bottom: 5px;
+        border: 1px solid lightgray;
+    }
+    
+    .hero-button {
+        width: 90%;
+        height: auto;
+    }
+
+    .hero-sell h3 {
+        visibility: visible;
+        margin: 0;
+    }
+
+    .hero-sell h1 {
+        font-size: 35px;
+    }
+}
 
 
 /* Endorsments */
+.endorsements {
+    background-color: rgb(27, 32, 33);
+    height: 100px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    padding-right: 10%;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-content: center;
+}
 
+.trustpilot {
+    font-family: Tahoma, sans-serif;
+    font-size: 30px;
+    color:white;
+    display: flex;
+    align-items: center;
+}
+
+.trustpilot-image {
+    width: 175px;
+    padding-left: 20px;
+}
+
+.rightmove-image {
+    width: 200px;
+
+}
+
+.zoopla-image {
+    width: 150px;
+}
+
+@media only screen and (max-width: 850px) {
+    .endorsements {
+        flex-direction: column;
+        justify-content: normal;
+        align-content: space-between;
+        padding: 20px 20% 20px 10%;
+    }
+    .endorsements div img {
+        width: 120px;
+    }
+
+    .trustpilot {
+        font-size: 20px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .endorsements div img {
+        width: 75px;
+    }
+
+    .endorsements {
+        align-items: center;
+        align-content: normal;
+        flex-wrap: nowrap;
+        padding: 10px 0;
+    }
+    .trustpilot {
+        font-size: 15px;
+    }
+}
 
 /* Reviews */
+.reviews {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    padding-top: 100px;
+    justify-content: center;
+}
 
+.reviews-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: Tahoma, sans-serif;
+    width: 30%;
+}
+
+.reviews-text h1 {
+    font-size: 35px;
+    padding-bottom: 35px
+}
+
+.reviews-text p {
+    font-size: 20px;
+    padding-bottom: 35px
+}
+
+.reviews-awards {
+    display: flex;
+    flex-direction: row;
+}
+
+.review-trustpilot {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 25px 25px;
+    justify-items: center;
+}
+
+.review-trustpilot-image {
+    width: 100px;
+}
+
+.review-trustpilot span {
+    font-size: 20px;
+}
+
+.review-trustpilot p {
+    font-size: 15px;
+    text-align: center;
+    grid-column: 1 / 4;
+}
+
+.review-estas-image {
+    width: 200px;
+}
+
+.reviews-image-div {
+    width: 30%;
+    height: auto;
+}
+
+.reviews-image {
+    height: auto;
+    width: 100%;
+}
 
 /* About-us */
 
@@ -115,3 +589,17 @@ header {
 
 
 /* Footer */
+
+footer {
+    text-align:center;
+    font-size: 10px;
+}
+
+footer p a {
+    text-decoration: none;
+    color: black;
+}
+
+footer p a:hover {
+    color: red;
+}

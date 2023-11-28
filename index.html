@@ -1,60 +1,128 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Typical Website</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="styles.css">
-    </head>
-    <body>
 
-        <header>
-            <div class="nav-bar">
-                <div class="strike-logo">
-                    Strike
-                </div>
-                <div class="menu-links">
-                    <h2>Selling</h2>
-                    <h2>Buying</h2>
-                    <h2>Why Strike</h2>
-                    <h2>Find Property</h2>
-                    <h2 class="valuation-button">Book a Valuation</h2>
-                </div>
-                <div class="log-in-button">
-                    Log-in
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Strike - Online Estate Agents. Sell your house for FREE</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <div class="nav-bar">
+            <div class="strike-logo">
+                strike
+            </div>
+            <div class="menu-links">
+                <h2>Selling <span class="menu-arrow"></span></h2>
+                <h2>Buying <span class="menu-arrow"></span></h2>
+                <h2>Why Strike <span class="menu-arrow"></span></h2>
+                <h2>Find Property</h2>
+                <h2 class="valuation-button">Book a Valuation</h2>
+            </div>
+            <div class="log-in-button">
+                👤 Log in
+            </div>
+            <div class="burger-menu">
+                <div>👤</div>
+                <div class="burger-menu-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </div>
             </div>
-        </header>
+        </div>
+    </header>
+    <div class="chat-icon">
+        <div>
+            🗩
+        </div>
+    </div>
+    <main>
 
-        <main>
-            
-            <section class="hero">
+        <section class="hero">
+            <div class="hero-sell">
+                <h1>Let's sell your home</h1>
+                <h1>for free</h1>
+                <h3>with the fastest-growing estate agent in the UK</h2>
+                    <div class="hero-postcode-input">
+                        <input type="text" placeholder="What's your postcode?">
+                        <h2 class="valuation-button hero-button">Book a Valuation</h2>
+                    </div>
+            </div>
+            <div class="hero-image-div">
+                <img class="hero-image"
+                    src="https://strike.co.uk/static/homepage-hero-variant-e95a8b499a6cbdf11c7ef74f7d6ee712.jpg"
+                    alt="Woman dancing in front of sold house">
+            </div>
 
-            </section>
+        </section>
 
-            <section class="endorsements">
+        <section class="endorsements">
+            <div class="trustpilot">
+                <span>Excellent</span>
+                <img class="trustpilot-image" src="https://cdn.trustpilot.net/brand-assets/4.1.0/stars/stars-4.5.svg"
+                    alt="Trustpilot rating of 4.5 stars out of 5">
+            </div>
+            <div class="rightmove">
+                <img class="rightmove-image"
+                    src="https://i0.wp.com/mcarthurestateagency.com/wp-content/uploads/2021/06/mca_rightmovelight.png?fit=488%2C326&ssl=1"
+                    alt="Rightmove logo">
+            </div>
+            <div class="zoopla">
+                <img class="zoopla-image"
+                    src="data:image/png;base64,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"
+                    alt="Zoopla logo">
+            </div>
+        </section>
 
-            </section>
+        <section class="reviews">
+            <div class="reviews-text">
+                <h1>We sell your home faster — and for more — than any other top UK agent.*</h1>
+                <p>There's a reason we're the Online Estate Agent of the Year for three years running.</p>
+                <div class="reviews-awards">
+                    <div class="review-trustpilot">
+                        <span>Excellent</span>
+                        <img class="review-trustpilot-image"
+                            src="https://cdn.trustpilot.net/brand-assets/4.1.0/stars/stars-4.5.svg">
+                        <span>Trustpilot</span>
+                        <p>BASED ON 22,382 REVIEWS</p>
+                    </div>
+                    <div class="review-estas">
+                        <img class="review-estas-image"
+                            src="https://strike.co.uk/static/estas-three-peat-black-9063e9f8a9e652416e392d12c41eeaa1.png">
+                    </div>
+                </div>
+            </div>
+            <div class="reviews-image-div">
+                <img class="reviews-image"
+                    src="https://strike.co.uk/static/95087579d6b3a2fab39824986bd6e5d7/8ff2e/illustration-holding-signs.webp"
+                    alt="Person dancing with award">
+            </div>
+            <div>
 
-            <section class="reviews">
+            </div>
+        </section>
 
-            </section>
+        <section class="about-us">
 
-            <section class="about-us">
+        </section>
 
-            </section>
+        <section class="guides">
 
-            <section class="guides">
+        </section>
 
-            </section>
+    </main>
 
-        </main>
+    <footer>
+        <hr>
+        <p>This is a CSS practice project using the <a href="https://strike.co.uk">Strike</a> webpage as reference.</p>
+        <hr>
+    </footer>
 
-        <footer>
+</body>
 
-        </footer>
-
-    </body>
 </html>
